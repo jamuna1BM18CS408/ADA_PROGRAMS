@@ -2,7 +2,7 @@
 
 int main()
 {
-	int a[10],i,larg,n;
+	int a[100],i,larg,n;
 	larg=0;
 	printf("enter the value of n\n");
 	scanf("%d",&n);
@@ -13,18 +13,21 @@ int main()
 	}
 
 	for(int j=0;j<n;j++)
+	{
 		for(int k=j+1;k<n;k++)
 	{
 		if(a[j]>a[k])
 		  {
 			larg=a[j];
-		 }
-	else
-		{
-			larg=a[k];
-			
 		  }
+		  else
+			  {
+			  larg=a[k];
+		  }
+			
 		  
+		  
+	}
 	}
 	printf("max=%d",larg);
 }
