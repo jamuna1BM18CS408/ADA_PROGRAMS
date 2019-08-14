@@ -1,7 +1,19 @@
 #include<stdio.h>
-int binarysearch(int arr[],int n,int key)
+int main()
 {
-	int start=0,end=n,result,count=0,i,x;
+	int count=0,x,arr[100],n,key,i,start,end;
+        printf("enter the size of array\n");
+	scanf("%d",&n);
+	start=1,end=n;
+	printf("enter the elements");
+	for(i=0;i<n;i++)
+	{
+           scanf("%d",&arr[i]);
+	}
+        printf("enter the key:");
+        scanf("%d",&key);
+       
+         
         for(i=0;i<n;i++)
 {
 	if(start<end)
@@ -12,9 +24,7 @@ int binarysearch(int arr[],int n,int key)
             if(count==0)
               printf("%d",i);
               count++;
-              x=1;
-            	    
-       
+              x=i;     
           }
           
           else if(arr[i]<key)
@@ -34,20 +44,7 @@ printf("0 0 -1");
 else
 {
 printf("%d%d",x,count);
+return 0;
 }
 }
 
-int main()
-{
-	int arr[100],n,k,i;
-        printf("enter the size of array\n");
-	scanf("%d",&n);
-	printf("enter the elements");
-	for(i=0;i<n;i++)
-	{
-           scanf("%d",&arr[i]);
-	}
-        printf("enter the key:");
-        scanf("%d",&k);
-        binarysearch(arr,n,k);
-}            
