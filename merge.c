@@ -18,8 +18,8 @@ int main()
 	printf("\nSorted array is :");
 	for(i=0;i<n;i++)
 		printf("%d ",a[i]);
-		
 	return 0;
+		
 }
  
 void mergesort(int a[],int low,int high)
@@ -38,13 +38,13 @@ void mergesort(int a[],int low,int high)
 void merge(int a[],int i1,int low,int i2,int high)
 {
 	int temp[50];	
-	int i,j,k;
+	int i,j,k,count=0;
 	i=i1;	
 	j=i2;	
 	k=0;
 	
 	while(i<=low && j<=high)	
-	{
+	{	count++;
 		if(a[i]<a[j])
 			temp[k++]=a[i++];
 		else
@@ -52,12 +52,19 @@ void merge(int a[],int i1,int low,int i2,int high)
 	}
 	
 	while(i<=low)	
-		temp[k++]=a[i++];
+		{
+			temp[k++]=a[i++];
+		}
 		
 	while(j<=high)	
-		temp[k++]=a[j++];
+		{
+			temp[k++]=a[j++];
+		}
 		
 	
 	for(i=i1,j=0;i<=high;i++,j++)
-		a[i]=temp[j];
+		{
+			a[i]=temp[j];
+		}
+	printf("number of comparisions=%d",count);
 }
